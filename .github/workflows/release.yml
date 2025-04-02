@@ -20,7 +20,7 @@ jobs:
         # Include amd64 on all platforms.
         goos: [ linux ]
         goarch: [ amd64 ]
-        exclude:
+        include:
           # BEGIN Linux ARM 5 6 7
           - goos: linux
             goarch: arm
@@ -32,10 +32,7 @@ jobs:
             goarch: arm
             goarm: 5
           # END Linux ARM 5 6 7
-          # BEGIN Android ARM 8
-          - goos: android
-            goarch: arm64
-          # END Android ARM 8
+          
           # BEGIN Other architectures
           # BEGIN riscv64 & ARM64
           - goos: linux
